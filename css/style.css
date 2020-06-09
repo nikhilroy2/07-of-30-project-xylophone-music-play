@@ -1,0 +1,156 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --desired-size: 40;
+  --coefficient: 1vmin;
+  --size: calc(var(--desired-size) * var(--coefficient));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+.piano_wrapper {
+  height: calc(1.2 * var(--size));
+}
+
+.btn_piano_big_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.btn_piano_big_wrapper::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%) rotate(12deg);
+  width: 110%;
+  height: 5px;
+  background: #fff;
+  z-index: -1;
+}
+
+.btn_piano_big_wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 22%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%) rotate(-12deg);
+  width: 110%;
+  height: 5px;
+  background: #fff;
+  z-index: -1;
+}
+
+.btn_piano_big_wrapper .piano_active {
+  -webkit-box-shadow: 0 0px 20px orange;
+          box-shadow: 0 0px 20px orange;
+}
+
+.btn_piano_big_wrapper .btn_piano_big {
+  width: 45px;
+  height: 250px;
+  background: #4e08f3;
+  margin-right: 8px;
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn_piano_big_wrapper .btn_piano_big::before, .btn_piano_big_wrapper .btn_piano_big::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: currentColor;
+}
+
+.btn_piano_big_wrapper .btn_piano_big::before {
+  top: 10px;
+}
+
+.btn_piano_big_wrapper .btn_piano_big::after {
+  bottom: 10px;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(2) {
+  height: 230px;
+  background: #4e08f3;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(3) {
+  height: 210px;
+  background: #4507d4;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(4) {
+  height: 190px;
+  background: #32049e;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(5) {
+  height: 170px;
+  background: #1a0252;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(6) {
+  height: 150px;
+  background: #602bdd;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(7) {
+  height: 130px;
+  background: #2226e6;
+}
+
+.btn_piano_big_wrapper .btn_piano_big:nth-of-type(8) {
+  height: 110px;
+  background: #c931dd;
+}
+
+.btn_piano_big_wrapper .btn_piano_big kbd {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=style.css.map */

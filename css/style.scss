@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+:root {
+    --desired-size: 40;
+    --coefficient: 1vmin;
+    --size: calc(var(--desired-size) * var(--coefficient));
+  }
+@mixin j-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.piano_wrapper{
+        height: calc(1.2 * var(--size));
+}
+.btn_piano_big_wrapper{
+    @include j-center;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%) rotate(12deg);
+        width: 110%;
+        height: 5px;
+        background: #fff;
+        z-index: -1;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 22%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%) rotate(-12deg);
+        width: 110%;
+        height: 5px;
+        background: #fff;
+        z-index: -1;
+    }
+    .piano_active{
+        box-shadow: 0 0px 20px orange;
+    }
+    .btn_piano_big{
+        width: 45px;
+        height:250px;
+        background: rgb(78, 8, 243);
+        margin-right: 8px;
+        border-radius: 20px;
+        color: #fff;
+        position: relative;
+        user-select: none;
+        cursor: pointer;
+        transition: .3s;
+       
+        &::before,&::after{
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: currentColor;
+        }
+        &::before{
+            top: 10px;
+        }
+        &::after{
+            bottom: 10px;
+        }
+        &:nth-of-type(2){
+            height: 230px;
+            background: rgb(78, 8, 243);
+        }
+        &:nth-of-type(3){
+            height: 210px;
+            background: rgb(69, 7, 212);
+
+        }
+        &:nth-of-type(4){
+            height: 190px;
+            background: rgb(50, 4, 158);
+
+        }
+        &:nth-of-type(5){
+            height: 170px;
+            background: rgb(26, 2, 82);
+
+        }
+        &:nth-of-type(6){
+            height: 150px;
+            background: rgb(96, 43, 221);
+
+        }
+        &:nth-of-type(7){
+            height: 130px;
+            background: rgb(34, 38, 230);
+
+        }
+        &:nth-of-type(8){
+            height: 110px;
+            background: rgb(201, 49, 221);
+
+        }
+        kbd{
+            width: 100%;
+            height: 100%;
+           @include j-center;
+           font-size: 2rem;
+        }
+    }
+}
